@@ -1,1 +1,24 @@
+//Canvas is 320(x) by 450(y)
 
+penUp();
+hide();
+
+//Function Calls
+drawBackground();
+
+function drawBackground(){
+  penRGB(5,75,5);
+  dot(1000);
+  
+  penWidth(6);
+  
+  for(var i = 0; i < 56; i++){
+  moveTo(0,i*5);
+  turnTo(90);
+  penRGB(0,0,i);
+  penDown();
+  moveForward(320);
+  penUp();
+  }
+  
+}
