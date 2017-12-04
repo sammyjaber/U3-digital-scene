@@ -22,3 +22,39 @@ function drawBackground(){
   }
   
 }
+----------------------------------------------------------------------------------
+dot(1000);
+hide();
+
+function drawStarSide(n) {
+  penDown();
+for (var i = 1; i < n; i++) 
+{
+  penRGB(255,255,255,1/i);
+  moveForward(1);
+}
+penUp();
+turnLeft(180);
+moveForward(n-1);
+}
+
+function drawStar(n) {
+  penWidth(3);
+  penDown();
+  drawStarSide(n);
+  turnLeft();
+  drawStarSide(n);
+  turnLeft();
+  drawStarSide(n);
+  turnLeft();
+  drawStarSide(n);
+  turnLeft();
+}
+
+function drawAllStars(sideLength,amount) {
+  for (var i = 0; i < amount; i++) {
+    moveTo(randomNumber(0,320),randomNumber(0,270));
+    drawStar(sideLength);
+  }
+}
+drawAllStars(500,5);
